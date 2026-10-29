@@ -12,8 +12,19 @@ void insertionSort(vector<string>& arr){
         while(j>=0 && arr[j] > temp){
             arr[j+1] = arr[j];
             j--;
+
+            for(string& k : arr){
+                cout << k << " ";
+            }
+            cout << endl;
+            
         }
         arr[j+1] = temp;
+        
+        for(string& k : arr){
+                cout << k << " ";
+        }
+        cout << endl;
     }
 }
 
@@ -26,21 +37,17 @@ int main(){
     cout<< "mau masukan berapa kata: "; cin >> jumlah;
     
     for(int i = 0; i < jumlah; i++){
-        string inputkata;
+        string inputKata;
         cout << "masukkan kata ke "<< i <<" : "; cin >> inputKata;
         kata.push_back(inputKata);
     }
     
-    //sebelum sort
-    for(string& k : kata){
-        cout << k << " "; 
-    }
-    cout << endl; 
     
     insertionSort(kata);
 
     //sesudah sort
     for(string& k : kata){
-        cout << k;
+        cout << k << " ";
     }
 }
+
